@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>HackMap | {% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">HackMap</a>
+            </nav>
+        </div>
+
+        {% block map %}
+        {% endblock %}
+
+
+        {% block scripts %}
+        {% endblock %}
+    </body>
+</html>

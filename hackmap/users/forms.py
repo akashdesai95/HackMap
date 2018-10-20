@@ -2,7 +2,11 @@ from django import forms
 from django.contrib.auth.models import User
 
 
-class SignUpForm(forms.Form):
+class SignUpForm(forms.ModelForm):
+    username = forms.CharField(label='Username', max_length=30, widget=forms.TextInput(attrs={
+                                                                  'class': 'form-control',
+                                                                  'placeholder': 'JohnDoe',
+                                                              }), required=True)
     first_name = forms.CharField(label='First Name', max_length=30, widget=forms.TextInput(attrs={
                                                                   'class': 'form-control',
                                                                   'placeholder': 'John',
@@ -15,7 +19,7 @@ class SignUpForm(forms.Form):
                                                                   'class': 'form-control',
                                                                   'placeholder': 'yourname@example.com',
                                                               }), required=True)
-    pass1 = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={
+    password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={
                                                                   'class': 'form-control',
                                                               }), required=True)
     pass2 = forms.CharField(label='Retype Password', widget=forms.PasswordInput(attrs={
@@ -24,9 +28,9 @@ class SignUpForm(forms.Form):
 
     class Meta:
         model = User
-        fields = ('first_name',
+        fields = ('username', 'first_name',
                   'last_name', 'email',
-                  'password1', 'password2', )
+                  'password', )
 
 
 class LoginForm(forms.Form):
