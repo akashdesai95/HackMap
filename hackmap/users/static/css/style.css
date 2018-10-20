@@ -1,0 +1,24 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.sign-up-form, .login-form {
+  position: absolute;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.sign-up-form .sign-up-head, .sign-up-form .login-head, .sign-up-form p, .login-form .sign-up-head, .login-form .login-head, .login-form p {
+  text-align: center;
+}
+.sign-up-form svg, .login-form svg {
+  margin: 10px 0;
+}
+
+.login-form {
+  opacity: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

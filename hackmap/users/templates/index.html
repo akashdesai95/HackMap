@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>HackMap | Register</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <div class="sign-up-form">
+            <h3 class="sign-up-head">Register</h3>
+            <form action="{% url 'authenticate' %}" method="post">
+                {% csrf_token %}
+                {% for field in signup_form %}
+                <div class="form-group">
+                    {{ field.label_tag }}<br>
+                    {{ field }}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-default pull-right">Submit</button>
+            </form>
+            <svg width="100%" height="2px">
+                <line x1="5%" y1="1px" x2="95%" y2="1px" style="stroke:rgb(50,50,50); stroke-width:1px"></line>
+            </svg>
+            <p>Already registered? Login <a onclick="openLogin()">here</a>.</p>
+        </div><!-- sign-up-form -->
+        <div class="login-form">
+            <h3 class="login-head">Login</h3>
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                {% for login_field in login_form %}
+                <div class="form-group">
+                    {{ login_field }}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-default pull-right">Login</button>
+            </form>
+        </div><!-- login-form -->
+        {% load static %}
+        <script src="{% static 'js/anime.min.js' %}"></script>
+        <script src="{% static 'js/register.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+</html>

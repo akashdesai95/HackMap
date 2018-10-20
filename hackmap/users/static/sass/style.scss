@@ -1,0 +1,27 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+//
+// index.html
+//
+.sign-up-form, .login-form {
+
+  $svg_margin: 10px 0;
+
+  position: absolute;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .sign-up-head, .login-head, p {
+    text-align: center;
+  }
+  svg {
+    margin: $svg_margin;
+  }
+}
+.login-form {
+  opacity: 0;
+}
