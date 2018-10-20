@@ -19,6 +19,7 @@ html, body {
 
 .login-form {
   opacity: 0;
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

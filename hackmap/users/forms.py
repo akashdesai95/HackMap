@@ -11,27 +11,27 @@ class SignUpForm(forms.Form):
                                                                   'class': 'form-control',
                                                                   'placeholder': 'Doe',
                                                               }), required=True)
-    email = forms.EmailField(label='Email', max_length=254, widget=forms.EmailInput(attrs={
+    email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={
                                                                   'class': 'form-control',
                                                                   'placeholder': 'yourname@example.com',
                                                               }), required=True)
     pass1 = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={
                                                                   'class': 'form-control',
                                                               }), required=True)
-    pass2 = forms.CharField(label=' Retype Password', widget=forms.PasswordInput(attrs={
+    pass2 = forms.CharField(label='Retype Password', widget=forms.PasswordInput(attrs={
                                                                   'class': 'form-control',
                                                               }), required=True)
 
     class Meta:
         model = User
-        fields = ('username', 'first_name',
+        fields = ('first_name',
                   'last_name', 'email',
                   'password1', 'password2', )
 
 
 class LoginForm(forms.Form):
 
-    email = forms.EmailField(label='Email', max_length=254, widget=forms.EmailInput(attrs={
+    email_login = forms.EmailField(label='Email', max_length=254, widget=forms.EmailInput(attrs={
                                                                   'class': 'form-control',
                                                                   'placeholder': 'yourname@example.com',
                                                               }), required=True)
